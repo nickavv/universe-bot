@@ -9,7 +9,7 @@ greetings = [
 
 module.exports = (robot) ->
 
-  robot.respond /hi|hello|hey|sup|howdy/gim, (res) ->
+  robot.respond /hi|hello|hey|sup|howdy|cheers/gim, (res) ->
     res.send greetings[Math.floor(Math.random() * greetings.length)]
   
   robot.respond /universe/gim, (res) ->
