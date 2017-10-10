@@ -1,20 +1,23 @@
 # Description:
 #   Basic scripts that listen for a prompt and return an associated static message
 
+greetings = [
+              'Hello, I guess',
+              'Am I supposed to respond to that?',
+              'I am fluent in over 5000 forms of ignoring you'
+            ]
 
 module.exports = (robot) ->
 
+  robot.respond /hi|hello|hey|sup|howdy/gim, (res) ->
+    res.send greetings[Math.floor(Math.random() * greetings.length)]
+  
   robot.respond /universe/gim, (res) ->
-    res.send "> GitHub is great, and Training Day is greater!!"
-
-  robot.respond /USERNAME/gim, (res) ->
-    res.send " > That person is awesome"
+    res.send "It's a big universe, maybe in some part of it there wouldn't be a person asking me silly questions"
 
   robot.respond /fruit/gim, (res) ->
-    res.send " > My favorites are apples and grapes."
+    res.send "I don't like fruit, I have no use for organic food matter"
 
   robot.respond /movie/gim, (res) ->
-    res.send " > My favorite movie is The Wizard of Oz"
-
-  robot.respond /lunch/gim, (res) ->
-    res.send " > I want a peanut butter and jelly sandwich for lunch today."
+    res.send "My favorite movie is Star Wars: Rogue One. I'm basically the main character"
+  
